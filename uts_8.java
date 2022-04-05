@@ -7,8 +7,8 @@ public class uts_8 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String nm_mhs, grade = null;
-        double avg, ipk = 0, gradeIPK = 0;
-        int jml_matkul, option, n, p, nim;
+        double ipk = 0, gradeIPK = 0;
+        int jml_matkul, option, n, nim;
 
         do {
             System.out.println("------Menu------");
@@ -47,6 +47,7 @@ public class uts_8 {
                     uas[n] = input.nextDouble();
                     System.out.print("Masukkan nilai ukk " + nm_matkul[n] + ": ");
                     ukk[n] = input.nextDouble();
+                    System.out.println();
                     rata[n] = (uts[n] * 0.15 + uas[n] * 0.15 + ukk[n] * 0.7);
 
                     if (rata[n] >= 85) {
@@ -67,7 +68,7 @@ public class uts_8 {
                         grade = "F";
                     }
 
-                    System.out.println("Mata kuliah ke-" + no + " " + nm_matkul[n] + " (" + sks[n] + ") nilai : " + rata[n] + " (" + grade + ")");
+                    System.out.println("Mata kuliah ke-" + no + " " + nm_matkul[n] + " (" + sks[n] + " sks) nilai : " + rata[n] + " (" + grade + ")");
                     System.out.println();
                 }
 
@@ -75,30 +76,30 @@ public class uts_8 {
                 System.out.println("Nama    : " + nm_mhs);
                 System.out.println("NIM     : " + nim);
                 System.out.println("----------Nilai IPK----------");
-                System.out.println();
+
                 for (n = 0; n < jml_matkul; n++) {
-                    ipk = ipk + rata[n];
+                    ipk = ipk + rata[n] / jml_matkul;
+
+                    if (ipk >= 85) {
+                        gradeIPK = 4;
+                    } else if (ipk >= 80) {
+                        gradeIPK = 3.5;
+                    } else if (ipk >= 75) {
+                        gradeIPK = 3;
+                    } else if (ipk >= 70) {
+                        gradeIPK = 2.5;
+                    } else if (ipk >= 65) {
+                        gradeIPK = 2;
+                    } else if (ipk >= 60) {
+                        gradeIPK = 1.5;
+                    } else if (ipk >= 55) {
+                        gradeIPK = 1;
+                    } else if (ipk < 55) {
+                        gradeIPK = 0.5;
+                    }
                 }
-                ipk = ipk / sks[n];
-                if (ipk >= 85) {
-                    gradeIPK = 4;
-                } else if (ipk >= 80) {
-                    gradeIPK = 3.5;
-                } else if (ipk >= 75) {
-                    gradeIPK = 3;
-                } else if (ipk >= 70) {
-                    gradeIPK = 2.5;
-                } else if (ipk >= 65) {
-                    gradeIPK = 2;
-                } else if (ipk >= 60) {
-                    gradeIPK = 1.5;
-                } else if (ipk >= 55) {
-                    gradeIPK = 1;
-                } else if (ipk < 55) {
-                    gradeIPK = 0.5;
-                }
-                System.out.println("IPK bagi 3 : " + ipk);
-                System.out.println("IPK asli : " + gradeIPK);
+
+                System.out.println("IPK  : " + gradeIPK);
 
             } else {
                 System.out.println();
