@@ -47,7 +47,7 @@ public class uts_8 {
                     uas[n] = input.nextDouble();
                     System.out.print("Masukkan nilai ukk " + nm_matkul[n] + ": ");
                     ukk[n] = input.nextDouble();
-                    rata[n] = (uts[n]*0.15 + uas[n]*0.15 + ukk[n]*0.7);
+                    rata[n] = (uts[n] * 0.15 + uas[n] * 0.15 + ukk[n] * 0.7);
 
                     if (rata[n] >= 85) {
                         grade = "A";
@@ -79,7 +79,7 @@ public class uts_8 {
                 for (n = 0; n < jml_matkul; n++) {
                     ipk = ipk + rata[n];
                 }
-                ipk = ipk / 3;
+                ipk = ipk / sks[n];
                 if (ipk >= 85) {
                     gradeIPK = 4;
                 } else if (ipk >= 80) {
@@ -100,9 +100,8 @@ public class uts_8 {
                 System.out.println("IPK bagi 3 : " + ipk);
                 System.out.println("IPK asli : " + gradeIPK);
 
-            } 
-            else {
-                System.out.println("Menu tidak ditemukan, Silahkan coba lagi");
+            } else {
+                System.out.println();
             }
         } while (option != 0);
         System.out.println("Anda keluar dari aplikasi, Terimakasih");
