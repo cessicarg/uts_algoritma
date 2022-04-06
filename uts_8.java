@@ -1,5 +1,3 @@
-package loop;
-
 import java.util.Scanner;
 
 public class uts_8 {
@@ -50,22 +48,22 @@ public class uts_8 {
                     System.out.println();
                     rata[n] = (uts[n] * 0.15 + uas[n] * 0.15 + ukk[n] * 0.7);
 
-                    if (rata[n] >= 85) {
+                    if (rata[n] > 80) {
                         grade = "A";
-                    } else if (rata[n] >= 80) {
-                        grade = "B+";
                     } else if (rata[n] >= 75) {
-                        grade = "B";
+                        grade = "B+";
                     } else if (rata[n] >= 70) {
-                        grade = "C+";
+                        grade = "B";
                     } else if (rata[n] >= 65) {
-                        grade = "C";
+                        grade = "C+";
                     } else if (rata[n] >= 60) {
-                        grade = "D+";
+                        grade = "C";
                     } else if (rata[n] >= 55) {
+                        grade = "D+";
+                    } else if (rata[n] >= 50) {
                         grade = "D";
-                    } else if (rata[n] < 55) {
-                        grade = "F";
+                    } else if (rata[n] < 50) {
+                        grade = "E";
                     }
 
                     System.out.println("Mata kuliah ke-" + no + " " + nm_matkul[n] + " (" + sks[n] + " sks) nilai : " + rata[n] + " (" + grade + ")");
@@ -80,7 +78,7 @@ public class uts_8 {
                 for (n = 0; n < jml_matkul; n++) {
                     ipk = ipk + rata[n] / jml_matkul;
 
-                    if (ipk >= 85) {
+                    if (ipk > 80) {
                         gradeIPK = 4;
                     } else if (ipk >= 80) {
                         gradeIPK = 3.5;
@@ -94,11 +92,11 @@ public class uts_8 {
                         gradeIPK = 1.5;
                     } else if (ipk >= 55) {
                         gradeIPK = 1;
-                    } else if (ipk < 55) {
-                        gradeIPK = 0.5;
+                    } else if (ipk < 50) {
+                        gradeIPK = 0;
                     }
                 }
-
+                
                 System.out.println("IPK  : " + gradeIPK);
 
             } else {
